@@ -1,0 +1,134 @@
+@import '../css/media.scss';
+@import '../css/reset.scss';
+
+.vongquay-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .anh_2 {
+        @include xs {
+            width: 150%;
+            object-fit: cover;
+            @media (orientation: landscape) {
+                width: 100%;
+            }
+        }
+        @include sm {
+            width: 200%;
+            object-fit: cover;
+            @media (orientation: landscape) {
+                width: 100%;
+            }
+        }
+        @include lg {
+            width: 960px;
+            height: 540px;
+            object-fit: unset;
+        }
+    }
+    .vongquay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        @include xs {
+            //bottom: 20%;
+        }
+        .arrow {
+            position: absolute;
+            z-index: 1;
+            top: -1%;
+            @include xs {
+                height: 20%;
+            }
+            @include sm {
+                height: 20%;
+            }
+            @include md {
+                height: 20%;
+            }
+            @include lg {
+                // width: 50px;
+                // height: 60px;
+                height: 20%;
+            }
+            @include xl {
+                height: 15%;
+            }
+        }
+        .anh_vongquay {
+            @include xs {
+                height: 45vh;
+                @media (orientation: landscape) {
+                    height: 80vh;
+                }
+            }
+            @include sm {
+                height: 50vh;
+                @media (orientation: landscape) {
+                    height: 80vh;
+                }
+            }
+            @include md {
+                height: 62vh;
+                @media (orientation: landscape) {
+                    height: 90vh;
+                }
+            }
+            @include lg {
+                height: 40vh;
+                @media (orientation: landscape) {
+                    height: 62vh;
+                    width: 62vh;
+                }
+            }
+            @include xl {
+                @media (orientation: landscape) {
+                    height: 60vh;
+                    width: 60vh;
+                }
+            }
+        }
+        .btXoay {
+            position: absolute;
+            text-align: center;
+            cursor: pointer;
+            .anh_btn-quay {
+                @include xs {
+                    height: 55px;
+                    width: 55px;
+                    &:hover {
+                        transform: scale(1.3);
+                        transition: 0.5s;
+                    }
+                }
+                @include sm {
+                    height: 70px;
+                    width: 70px;
+                    &:hover {
+                        transform: scale(1.3);
+                        transition: 0.5s;
+                    }
+                }
+                @include md {
+                    height: 80px;
+                    width: 80px;
+                    &:hover {
+                        transform: scale(1.3);
+                        transition: 0.5s;
+                    }
+                }
+                @include lg {
+                    height: 70px;
+                    width: 70px;
+                    &:hover {
+                        transform: scale(1.3);
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+    }
+}

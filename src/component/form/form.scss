@@ -1,0 +1,74 @@
+@import '../css/media.scss';
+@import '../css/reset.scss';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+.form {
+    font-family: 'Roboto';
+
+    @include xs {
+        width: 100%;
+    }
+    @include sm {
+        width: 100%;
+    }
+    @include lg {
+        width: 100%;
+    }
+
+    .field {
+        display: block;
+        border-radius: 5px;
+        font-family: 'Roboto';
+        color: black;
+        font-weight: 500;
+        background-color: #e3dddd;
+        @include xs {
+            padding: 7px;
+            margin-bottom: 5px;
+            //width: 250px;
+            width: 55vw;
+            font-size: 15px;
+        }
+        @include sm {
+            //padding: 4%;
+            margin-bottom: 5px;
+            padding: 10px;
+            width: 40vw;
+        }
+        @include lg {
+            //padding: 4%;
+            padding: 10px;
+            margin-bottom: 5px;
+            width: 260px;
+        }
+    }
+    .btn-div {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    .btn-ok {
+        border-radius: 3px;
+        color: black;
+        background-color: white;
+        width: fit-content;
+        cursor: pointer;
+        background-color: rgb(250, 168, 181);
+        &:hover {
+            background-color: #fd79a8;
+        }
+        @include xs {
+            margin-top: 3%;
+            padding: 2% 5%;
+        }
+        @include sm {
+            margin-top: 1%;
+            padding: 2% 5%;
+        }
+        @include lg {
+            margin-top: 3%;
+            padding: 3% 5%;
+        }
+    }
+}
+.selectt {
+}

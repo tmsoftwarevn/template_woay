@@ -1,0 +1,89 @@
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+@media (max-width: 576px) {
+  .form {
+    width: 100%;
+  }
+}
+@media (min-width: 577px) {
+  .form {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .form {
+    width: 100%;
+  }
+}
+.form .field {
+  display: block;
+  width: 100%;
+  border-radius: 2px;
+}
+@media (max-width: 576px) {
+  .form .field {
+    padding: 2%;
+    margin-bottom: 5px;
+  }
+}
+@media (min-width: 577px) {
+  .form .field {
+    padding: 2%;
+    margin-bottom: 5px;
+  }
+}
+@media (min-width: 992px) {
+  .form .field {
+    padding: 2%;
+    margin-bottom: 5px;
+    max-width: 260px;
+  }
+}
+.form .btn-ok {
+  border-radius: 5px;
+  color: white;
+  background-color: #e1b12c;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+.form .btn-ok:hover {
+  background-color: #c59513;
+}
+@media (max-width: 576px) {
+  .form .btn-ok {
+    margin-top: 3%;
+    padding: 2%;
+  }
+}
+@media (min-width: 577px) {
+  .form .btn-ok {
+    margin-top: 1%;
+    padding: 2%;
+  }
+}
+@media (min-width: 992px) {
+  .form .btn-ok {
+    margin-top: 3%;
+    padding: 3%;
+  }
+}/*# sourceMappingURL=form.css.map */

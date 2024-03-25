@@ -1,0 +1,58 @@
+@import '../css/media.scss';
+@import '../css/reset.scss';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+
+.final {
+    font-family: 'Roboto';
+
+    .blur {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #ccc;
+    }
+
+    .content {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+
+        .group {
+            border-radius: 5px;
+            background-color: #fd79a8;
+            text-align: center;
+            @include xs {
+                width: 80vw;
+                padding: 20px 30px;
+            }
+            @include sm {
+                padding: 20px 30px;
+            }
+            @include lg {
+                padding: 20px 40px 40px 40px;
+            }
+
+            p {
+                color: #fff;
+                text-transform: capitalize;
+            }
+            span {
+                color: black;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+            .btn-off {
+                color: white;
+                position: absolute;
+                top: 0;
+                right: 0;
+                cursor: pointer;
+                font-size: 25px;
+            }
+        }
+    }
+}
