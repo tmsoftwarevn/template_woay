@@ -11,6 +11,7 @@ const ButtonWheel = forwardRef((props, ref) => {
     handleQuay,
     modalFinal,
     detail_image,
+    listPhanqua
   } = props;
 
   useImperativeHandle(ref, () => ({
@@ -53,6 +54,7 @@ const ButtonWheel = forwardRef((props, ref) => {
               getResult={getResult}
               resetModalWheel={resetModalWheel}
               handleSetModalButton={handleSetModalButton}
+              listPhanqua = {listPhanqua}  //truyền 2 lần cha xuống
             />
           </div>
         </>

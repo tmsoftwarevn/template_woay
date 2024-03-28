@@ -12,7 +12,9 @@ const Modal = (props) => {
     resetModalWheel,
     handleSetModalButton,
     detail_image,
+    listPhanqua
   } = props;
+
   const [isSpinning, setSpinning] = useState(false);
   const [result, setResult] = useState(null);
   const [valueNoiDung, setValueNoiDung] = useState("");
@@ -21,14 +23,14 @@ const Modal = (props) => {
   const [isOpenThongBao, setIsThongBao] = useState(false);
   const refOutside = useRef(null);
 
-  const values = [
-    { gift: "Voucher 20%", pct: 90 },
-    { gift: "Vớ tập", pct: 2 },
-    { gift: "Khăn tập", pct: 2 },
-    { gift: "Bộ đồ tập Yoga", pct: 2 },
-    { gift: "Áo thun", pct: 2 },
-    { gift: "Combo Khăn, Vớ, Áo", pct: 2 },
-  ];
+  // const values = [
+  //   { gift: "Voucher 20%", pct: 90 },
+  //   { gift: "Vớ tập", pct: 2 },
+  //   { gift: "Khăn tập", pct: 2 },
+  //   { gift: "Bộ đồ tập Yoga", pct: 2 },
+  //   { gift: "Áo thun", pct: 2 },
+  //   { gift: "Combo Khăn, Vớ, Áo", pct: 2 },
+  // ];
   const sliceSize = 360 / 6;
   const spinWheel = () => {
     if (isSpinning) return;
@@ -38,11 +40,12 @@ const Modal = (props) => {
       setSpinning(true);
       const fullRots = 6;
       const targetAngle = 300 * fullRots;
-      const expanded = values.flatMap((user) => Array(user.pct).fill(user));
+      const expanded = listPhanqua.flatMap((user) => Array(user.tile).fill(user));
       let indexRandom = Math.floor(Math.random() * expanded.length); // arr
       const winner = expanded[indexRandom]; // get element
-      let findIndexGift = values.findIndex((item) => item.gift === winner.gift);
-      getResult(values[findIndexGift].gift);
+      let findIndexGift = listPhanqua.findIndex((item) => item.name === winner.name);
+      getResult(listPhanqua[findIndexGift].name);
+
       //console.log("index gift is: ", findIndexGift);
       //console.log("winner number: " + JSON.stringify(winner));
 
@@ -54,6 +57,7 @@ const Modal = (props) => {
         Math.random() *
           ((findIndexGift + 1) * sliceSize - findIndexGift * sliceSize + 1) +
         findIndexGift * sliceSize;
+
       setTimeout(() => {
         wheelRef.current.style.transition = "all ease-out 5s";
         wheelRef.current.style.transform = `rotate(${
@@ -68,7 +72,7 @@ const Modal = (props) => {
         }, 6000);
       }, 0);
     } else {
-      handleQuay(true);
+      handleQuay(true); // nhận biết để làm mờ màn hình
       getResult("Bạn hết lượt quay !");
     }
   };
