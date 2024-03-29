@@ -1,87 +1,34 @@
 @import '../css/media.scss';
 @import '../css/reset.scss';
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
-.container {
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #cccccc;
-    .parent {
-        .anh_1 {
-            @include xs {
-                width: 100%;
-                height: 20vh;
-                object-fit: cover;
-                @media (orientation: landscape) {
-                    height: 100%;
-                }
-            }
-            @include sm {
-                width: 100%;
-                height: 100%;
-            }
-            @include lg {
-                width: 960px;
-            }
-        }
-        .anh_3 {
-            @include xs {
-                width: 100%;
-                object-fit: cover;
-            }
-            @include sm {
-                width: 100%;
-                object-fit: cover;
-            }
-            @include lg {
-                width: 960px;
-                height: 100%;
-            }
-        }
-        .anh_4 {
-            @include xs {
-                width: 100%;
-                height: 100%;
-            }
-            @include sm {
-                width: 100%;
-                height: 100%;
-            }
-            @include lg {
-                width: 960px;
-                //height: 168px;
-            }
-        }
 
-        .form {
-            position: relative;
-            .info {
-                position: absolute;
-                @include xs {
-                    right: 10%;
-                    top: 53%;
-                    width: 30%;
-                }
-                @include sm {
-                    right: 10%;
-                    top: 53%;
-                    width: 30%;
-                }
-                @include lg {
-                    top: 65%;
-                    left: 73%;
-                    transform: translate(-50%, -50%);
-                    max-width: 260px;
-                }
-                @include xl {
-                    transform: translate(-80%, -50%);
-                }
-            }
-            .btn-info {
-            }
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.parent {
+    overflow: hidden;
+    .anh_1 {
+        @include xs {
+            width: 100%;
+        }
+        @include sm {
+            width: 100%;
+        }
+        @include lg {
+            width: 100%;
+        }
+    }
+    .anh_3 {
+        @include xs {
+            width: 100%;
+        }
+        @include sm {
+            width: 100%;
+        }
+        @include lg {
+            width: 100%;
         }
     }
 }

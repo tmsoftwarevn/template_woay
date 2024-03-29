@@ -20,7 +20,7 @@ const Wheel = (props) => {
   //   { name: "Áo thun", tile: 20 },
   //   { name: "Combo Khăn, Vớ, Áo", tile: 20 },
   // ];
-  const sliceSize = 360 / 6;    // listqua .length
+  const sliceSize = 360 / 6; // listqua .length
   const spinWheel = () => {
     if (isSpinning) return;
     const cookieValue = localStorage.getItem("TMWheel");
@@ -54,7 +54,7 @@ const Wheel = (props) => {
         findIndexGift * sliceSize; // cố định vòng quay, ko random
 
       setTimeout(() => {
-        wheelRef.current.style.transition = "all ease-out 5s";
+        wheelRef.current.style.transition = "all ease-out 4s";
         wheelRef.current.style.transform = `rotate(${
           randomAngle + targetAngle
         }deg)`;
@@ -97,7 +97,6 @@ const Wheel = (props) => {
               className="anh_btn-quay"
             />
           </div>
-
         </div>
       </div>
     </>

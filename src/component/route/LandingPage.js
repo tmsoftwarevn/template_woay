@@ -67,77 +67,80 @@ const LandingPage = () => {
     fetch_all_phanqua();
   }, []);
 
-  if(!detail_image) return <></>
+  if (!detail_image) return <></>;
   else
-  return (
-    <>
-      <div
-        className="container"
-        style={
-          isModal || onModalButton
-            ? { pointerEvents: "none", opacity: "0.5" }
-            : {}
-        }
-      >
-        <div className="parent">
-          <img
-            src={`${process.env.REACT_APP_BACKEND_URL}/images/banner/${detail_image?.banner}`}
-            alt="anh"
-            className="anh_1"
-          />
-          <div>
+    return (
+      <>
+        <div
+          className="container"
+          style={
+            isModal || onModalButton
+              ? { pointerEvents: "none", opacity: "0.5" }
+              : {}
+          }
+        >
+          <div className="parent">
+            <img
+              src={`${process.env.REACT_APP_BACKEND_URL}/images/banner/${detail_image?.banner}`}
+              alt="anh"
+              className="anh_1"
+            />
+
             <Wheel
               detail_image={detail_image}
               handleQuay={handleQuay}
               getResult={getResult}
               listPhanqua={listPhanqua}
             />
-          </div>
-          <img
-            src={`${process.env.REACT_APP_BACKEND_URL}/images/footer/${detail_image?.footer}`}
-            alt="anh"
-            className="anh_3"
-          />
-          <Divider />
-          <div
-            style={{ textAlign: "center", fontFamily: "Roboto" }}
-            className="by"
-          >
-            Design Created by{" "}
-            <b onClick={() => window.open("https://tmsoftware.vn/", "_blank")}>
-              tmsoftware.vn
-            </b>
+
+            <img
+              src={`${process.env.REACT_APP_BACKEND_URL}/images/footer/${detail_image?.footer}`}
+              alt="anh"
+              className="anh_3"
+            />
+            <Divider />
+            <div
+              style={{ textAlign: "center", fontFamily: "Roboto" }}
+              className="by"
+            >
+              Design Created by{" "}
+              <b
+                onClick={() => window.open("https://tmsoftware.vn/", "_blank")}
+              >
+                tmsoftware.vn
+              </b>
+            </div>
           </div>
         </div>
-      </div>
 
-      <ButtonWheel
-        handleQuay={handleQuay}
-        handleSetModalButton={handleSetModalButton}
-        getResult={getResult}
-        ref={refModalButton}
-        modalFinal={modalFinal}
-        detail_image={detail_image}
-        listPhanqua={listPhanqua}
-      />
-      {isModal && (
-        <Result
-          detail_image={detail_image}
+        <ButtonWheel
           handleQuay={handleQuay}
-          result={result}
-          hanleOffModalButton={hanleOffModalButton} // off modal btn
-          handleSetModalButton={handleSetModalButton} // blur screen
-          setModalFinalResult={setModalFinalResult}
-        />
-      )}
-      {modalFinal && (
-        <InfoResult
-          result={result}
-          setModalFinalResult={setModalFinalResult}
           handleSetModalButton={handleSetModalButton}
+          getResult={getResult}
+          ref={refModalButton}
+          modalFinal={modalFinal}
+          detail_image={detail_image}
+          listPhanqua={listPhanqua}
         />
-      )}
-    </>
-  );
+        {isModal && (
+          <Result
+            detail_image={detail_image}
+            handleQuay={handleQuay}
+            result={result}
+            hanleOffModalButton={hanleOffModalButton} // off modal btn
+            handleSetModalButton={handleSetModalButton} // blur screen
+            setModalFinalResult={setModalFinalResult}
+          />
+        )}
+        {modalFinal && (
+          <InfoResult
+            result={result}
+            setModalFinalResult={setModalFinalResult}
+            handleSetModalButton={handleSetModalButton}
+          />
+        )}
+      </>
+    );
 };
+
 export default LandingPage;
