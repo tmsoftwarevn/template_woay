@@ -29,6 +29,7 @@ const LandingPage = () => {
   const parts = url.split("-");
   const id = parts[parts.length - 1];
 
+  console.log('idddddd', id)
   const handleQuay = (check) => {
     setIsModal(check);
   };
